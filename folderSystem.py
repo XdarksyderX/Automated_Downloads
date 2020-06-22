@@ -8,6 +8,6 @@ def detect_create_folders(username, os_user, folder_name):
             os.mkdir(folder_name)
 
     elif os_user == 'Windows':
-        os.chdir('Users/{}/Downloads/'.format(username))
+        os.chdir('C:\\Users\\{}\\Downloads'.format(username))
         if not (os.path.isdir('./{}'.format(folder_name))):
             os.mkdir(folder_name)

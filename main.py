@@ -25,7 +25,7 @@ def main():
     organizer.organizer(user_name, media, 'MEDIA', user_system_type)
     organizer.organizer(user_name, code, 'CODE', user_system_type)
     organizer.organizer(user_name, compress, 'COMPRESS', user_system_type)
-
+    organizer.organizer_other(user_name, user_system_type)
 
 
 main()

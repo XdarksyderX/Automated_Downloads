@@ -19,7 +19,7 @@ def organizer(username, file_type, folder_name, type_os):
                 shutil.move(src=downloads + '/' + i, dst=downloads + '/' + folder_name)
 
 
-def organizer_other(username, folder_name, type_os):
+def organizer_other(username, type_os):
     if type_os == 'Linux':
         os.chdir('/home/{}/Downloads'.format(username))
         downloads = '/home/{}/Downloads'.format(username)
@@ -27,3 +27,8 @@ def organizer_other(username, folder_name, type_os):
     elif type_os == 'Windows':
         os.chdir('Users/{}/Downloads/'.format(username))
         downloads = 'Users/{}/Downloads/'.format(username)
+
+    container = os.listdir()
+    for i in container:
+        if i != 'MEDIA' and i != 'PROGRAMS' and i != 'TEXT' and i != 'CODE' and i != 'COMPRESS' and i != 'OTHER':
+            shutil.move(src=downloads + '/' + i, dst=downloads + '/' + 'OTHER')
